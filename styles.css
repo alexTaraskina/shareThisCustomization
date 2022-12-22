@@ -1,3 +1,83 @@
-.st-btn {
-    background-color: white !important;
+/* pure css is used, with sass nesting can be used  */
+
+:root {
+    --white: #FFFFFF;
+    --dark-blue: #003745;
+}
+
+.st-custom-sidebar {
+    display: flex;
+    z-index: 100020;
+    position: fixed;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 20%);
+    border-radius: 0;
+    border: 1.5px solid var(--dark-blue);
+    padding-top: 4px;
+
+    flex-direction: column;
+    width: 58px;
+    position: fixed;
+    top: 20%;
+    bottom: auto;
+    left: 0;
+    border-left: 0;
+    padding-top: 4px;
+}
+
+.st-custom-button {
+    left: 0;
+    background-color: var(--white);
+    display: inline-block;
+    cursor: pointer;
+    line-height: 50px;
+    height: 50px;
+    width: 50px;
+    margin: 0 4px;
+}
+
+.st-custom-icon-wrapper {
+    width: 32px;
+    height: 32px;
+    margin: 9px;
+}
+
+.st-custom-icon-wrapper svg {
+    fill: var(--dark-blue);
+}
+
+/* breeakpoint should be defined  - depends on what view is expected on tablet */
+@media screen and (max-width: 768px) {
+    .st-custom-sidebar {
+        flex-direction: row;
+        justify-content: center;
+        position: fixed;
+        top: auto;
+        bottom: 0;
+        border-bottom: 0;
+        padding: 0 8px;
+        box-sizing: border-box;
+        width: 100%;
+        border-left: 1.5px solid var(--dark-blue);
+    }
+
+    .st-custom-sidebar .st-custom-button {
+        background-color: rgb(0, 55, 69);
+        border-radius: 10%;
+        margin-top: 4px;
+        height: 2pc;
+        width: 2pc;
+    }
+
+    .st-custom-icon-wrapper {
+        width: 24px;
+        height: 24px;
+        margin: 0;
+    }
+
+    .st-custom-icon-wrapper svg {
+        fill: var(--white);
+        width: 24px !important;
+        height: 24px !important;
+        margin: 4px;
+    }
 }
